@@ -156,6 +156,12 @@ public class NovBackupFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Tipo de backup:");
 
+        tfHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHoraActionPerformed(evt);
+            }
+        });
+
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Backup geral", "Backup especifico" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,22 +230,25 @@ public class NovBackupFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(tfHora.getText().isEmpty())
         {
-         JOptionPane.showMessageDialog(null, 
-                             "Preencha todos os campos para prosseguir!");
+            JOptionPane.showMessageDialog(null,
+                "Preencha todos os campos para prosseguir!");
         }
         else
         {
-           String horario = tfHora.getText().trim();
-           String tipoBackup = jComboBox1.getSelectedItem().toString();
-           
-           
-           Backup bk = new Backup(horario, tipoBackup);
-           
-           backups.add(bk);
-           
-           salvarBackups();
+            String horario = tfHora.getText().trim();
+            String tipoBackup = jComboBox1.getSelectedItem().toString();
+
+            Backup bk = new Backup(horario, tipoBackup);
+
+            backups.add(bk);
+
+            salvarBackups();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tfHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHoraActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,22 +4,21 @@
  */
 package com.mycompany.sgce;
 
+import java.io.Serializable;
+
 /**
  *
  * @author flamingo_lindo
  */
-public class Backup  {
+public class Backup implements Serializable{
     
     String horario, tipoBackup;
 
-    public String getTipoBackup() {
-        return tipoBackup;
-    }
-
-    public void setTipoBackup(String tipoBackup) {
+    public Backup(String horario, String tipoBackup) {
+        this.horario = horario;
         this.tipoBackup = tipoBackup;
     }
-    
+
     public String getHorario() {
         return horario;
     }
@@ -28,13 +27,13 @@ public class Backup  {
         this.horario = horario;
     }
 
-    public Backup(String horario, String tipoBackup) {
-        this.horario = horario;
-        this.tipoBackup = tipoBackup;
+    public String getTipoBackup() {
+        return tipoBackup;
     }
 
-    
-
+    public void setTipoBackup(String tipoBackup) {
+        this.tipoBackup = tipoBackup;
+    }
     
     
     
